@@ -6,9 +6,10 @@ const port = 3000;
 app.use(express.json());
 
 app.post('/', (req, res) => {
-    console.log(req.body);
+    console.log('Headers: ', req.headers);
+    console.log('Body: ', req.body);
     const { trace: { matchingActions } } = req.body;
-    console.log(matchingActions);
+    console.log('Matching Actions: ', matchingActions);
     res.send('Processed data ok!');
 });
 
