@@ -11,6 +11,7 @@ app.post('/', (req, res) => {
     const { trace: { matchingActions } } = req.body;
     console.log('Matching Actions: ', matchingActions);
     const { dbOps, dbOps: { newJSON } } = matchingActions[0];
+    const { newJSON } = dbOps[0];
     console.log('Db Ops: ', dbOps);
     console.log('New JSON: ', newJSON);
     res.send('Processed data ok!');
