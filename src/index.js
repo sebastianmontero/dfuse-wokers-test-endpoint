@@ -10,7 +10,7 @@ app.post('/', (req, res) => {
     console.log('Body: ', req.body);
     const { trace: { matchingActions } } = req.body;
     console.log('Matching Actions: ', matchingActions);
-    const { dbOps, dbOps: { newJSON } } = matchingActions[0];
+    const { dbOps } = matchingActions[0];
     const { newJSON } = dbOps[0];
     console.log('Db Ops: ', dbOps);
     console.log('New JSON: ', newJSON);
